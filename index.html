@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site do casamento de Leandro e Bianca - 14 de Março de 2026">
+    <meta name="keywords" content="casamento, Leandro, Bianca, 14 de Março de 2026, lista de presentes">
+    <title>Leandro & Bianca - Nosso Casamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #8B7355;
+            --secondary-color: #D4B996;
+            --accent-color: #C19A6B;
+            --text-color: #333;
+            --light-color: #f9f9f9;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .wedding-date {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 100px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        /* Seções */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--accent-color);
+            margin: 15px auto;
+        }
+        
+        /* Nossa História */
+        .our-story {
+            background-color: white;
+        }
+        
+        .story-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+        }
+        
+        .story-text p {
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Detalhes do Casamento */
+        .wedding-details {
+            background-color: var(--light-color);
+        }
+        
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .detail-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .detail-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Galeria */
+        .gallery {
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Lista de Presentes */
+        .gift-list {
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .gifts-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+        
+        .gift-categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 2px solid var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .gift-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gift-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gift-item:hover .gift-image img {
+            transform: scale(1.1);
+        }
+        
+        .gift-info {
+            padding: 20px;
+        }
+        
+        .gift-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .gift-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .gift-description {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .gift-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            flex: 1;
+            margin-right: 10px;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-color);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light-color);
+        }
+        
+        .gift-reserved {
+            background: #f0f0f0;
+            position: relative;
+        }
+        
+        .gift-reserved:after {
+            content: 'Presenteado';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .payment-methods {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Modal para detalhes do presente */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .modal-title {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .bank-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .bank-btn {
+            padding: 15px;
+            border: 2px solid var(--secondary-color);
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .bank-btn:hover {
+            background: var(--light-color);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .bank-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .pix-instructions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .pix-code {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            word-break: break-all;
+            font-family: monospace;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Confirmação de Presença */
+        .rsvp {
+            background-color: white;
+        }
+        
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+        
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            width: 100%;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            background: var(--accent-color);
+        }
+        
+        .whatsapp-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .footer-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+        
+        /* Loading Indicator */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 3rem;
+            }
+            
+            .wedding-date {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 15px;
+            }
+            
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .rsvp-form {
+                padding: 30px 20px;
+            }
+            
+            .gifts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .gift-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn-primary {
+                margin-right: 0;
+            }
+            
+            .bank-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .bank-btn {
+                padding: 12px;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        /* Mapa */
+        .map-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-placeholder {
+            height: 300px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com imagem de fundo e contagem regressiva -->
+    <header>
+        <h1 class="couple-names fade-in">Leandro & Bianca</h1>
+        <p class="wedding-date fade-in">14 de Março de 2026</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div>Dias</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div>Horas</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div>Minutos</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div>Segundos</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nossa História -->
+    <section class="our-story">
+        <div class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Nos conhecemos em uma viagem inesquecível para o litoral norte, onde o destino nos uniu de forma mágica. Desde aquele primeiro encontro, sabíamos que algo especial estava começando.</p>
+                    <p>Foram anos de descobertas, risadas, desafios superados juntos e um amor que só crescia a cada dia. E agora, com imensa alegria, decidimos oficializar nossa união perante Deus, família e amigos.</p>
+                    <p>Estamos ansiosos para compartilhar este momento tão especial com todos vocês!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhes do Casamento -->
+    <section class="wedding-details">
+        <div class="container">
+            <h2 class="section-title">Detalhes do Casamento</h2>
+            <div class="details-container">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Cerimônia</h3>
+                    <p>Igreja Matriz de São Benedito</p>
+                    <p>20:00 horas</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Recepção</h3>
+                    <p>Salão Portela 2</p>
+                    <p>Rod. Jorn. Francisco Aguirre Proença, km 42 - S/n - Portela</p>
+                    <p>21:00 horas</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Como Chegar</h3>
+                    <p>Estacionamento disponível no local</p>
+                    <p>Entrada para o estacionamento na lateral</p>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.123456789012!2d-47.47049946704449!3d-22.99583377246278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU5JzQ1LjAiUyA0N8KwMjgnMTMuOCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Lista de Presentes -->
+    <section class="gift-list">
+        <div class="container">
+            <h2 class="section-title">Lista de Presentes Engraçados</h2>
+            
+            <div class="gifts-intro">
+                <p>Sabemos que o melhor presente é sua presença, mas se quiser nos presentear com algo divertido, criamos esta lista com opções hilárias! Cada item vem com uma dose extra de humor para alegrar nosso novo lar.</p>
+                <p>Escolha o presente mais engraçado e faça parte das nossas histórias para contar!</p>
+            </div>
+            
+            <div class="gift-categories">
+                <button class="category-btn active" data-category="all">Todos os Presentes</button>
+                <button class="category-btn" data-category="festa">Para a Festa</button>
+                <button class="category-btn" data-category="sobrevivencia">Sobrevivência</button>
+                <button class="category-btn" data-category="lua-de-mel">Lua de Mel</button>
+            </div>
+            
+            <div class="gifts-grid" id="giftsContainer">
+                <!-- Presentes serão inseridos aqui via JavaScript -->
+            </div>
+            
+            <div class="payment-methods">
+                <h3>Formas de Pagamento</h3>
+                <p>Aceitamos PIX em todos os bancos! Escolha seu banco e faça o pagamento diretamente pelo app.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-pix payment-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmação de Presença -->
+    <section class="rsvp">
+        <div class="container">
+            <h2 class="section-title">Confirme sua Presença</h2>
+            <div class="rsvp-form">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de Acompanhantes</label>
+                        <select id="guests" name="guests">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">Confirmo presença</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Selecione</option>
+                            <option value="yes">Sim, estarei presente</option>
+                            <option value="no">Não poderei comparecer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem para os noivos (opcional)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" id="submitButton">
+                        <span class="loading" id="loadingIcon"></span>
+                        Enviar Confirmação
+                    </button>
+                </form>
+                <div class="whatsapp-info">
+                    <p><i class="fab fa-whatsapp"></i> Sua confirmação será enviada diretamente para o WhatsApp dos noivos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Leandro & Bianca</h2>
+                <p>14 de Março de 2026</p>
+                <p>Com amor, para sempre</p>
+                <p style="margin-top: 20px;">Contato: (19) 98940-9943</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para detalhes do presente -->
+    <div class="modal" id="giftModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3 class="modal-title" id="modalGiftName">Nome do Presente</h3>
+            <div id="modalGiftContent">
+                <!-- Conteúdo será preenchido via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para galeria -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeGalleryModal">&times;</span>
+            <img id="galleryModalImage" src="" alt="" style="width: 100%; border-radius: 5px;">
+        </div>
+    </div>
+<script>
+    // Dados dos presentes engraçados
+    const gifts = [
+        {
+            id: 1,
+            name: "Fura-fila do Buffet",
+            category: "festa",
+            price: "R$ 60,00",
+            description: "Garanta seu prato antes que o tio do pavê ataque a mesa.",
+            image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            reserved: false,
+            pix: "00020126360014br.gov.bcb.pix0114+5519989409943520400005303986540560.005802BR5924Leandro Bueno De Camargo6009Sao Paulo62290525REC69187D68A3C1D56662999863047ED4"
+        },
+
+            {
+                id: 2,
+                name: "Um pedaço extra de bolo",
+                category: "festa",
+                price: "R$ 50,00",
+                description: "Porque amor vai, mas cobertura de chocolate é pra sempre.",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 3,
+                name: "Assento VIP para ver o buquê voando",
+                category: "festa",
+                price: "R$ 70,00",
+                description: "Tenha o melhor ângulo da disputa — capacete não incluso.",
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 4,
+                name: "Seguro anti-buquê",
+                category: "festa",
+                price: "R$ 60,00",
+                description: "Contribua para que o buquê não vá parar na mão da sua namorada (ou esposa).",
+                image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 5,
+                name: "Direito a escolher uma música na pista de dança",
+                category: "festa",
+                price: "R$ 80,00",
+                description: "Só não vale pedir 'Evidências' mais de três vezes.",
+                image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 6,
+                name: "Lugar cativo na fila da sobremesa",
+                category: "festa",
+                price: "R$ 100,00",
+                description: "Prioridade garantida pra quem sabe o que realmente importa.",
+                image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 7,
+                name: "Kit 'Primeira manhã de casados'",
+                category: "sobrevivencia",
+                price: "R$ 90,00",
+                description: "Café, pão de queijo e a lembrança de que agora é pra sempre.",
+                image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 8,
+                name: "Protetor solar do noivo",
+                category: "sobrevivencia",
+                price: "R$ 70,00",
+                description: "Para evitar que ele volte da lua de mel parecendo um camarão apaixonado.",
+                image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 9,
+                name: "Drink romântico à beira-mar",
+                category: "sobrevivencia",
+                price: "R$ 110,00",
+                description: "Duas doses de amor, uma de risada e gelo à vontade.",
+                image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 10,
+                name: "Sessão de massagem para os sobreviventes do casamento",
+                category: "sobrevivencia",
+                price: "R$ 100,00",
+                description: "Relaxar depois da dança e dos abraços de 5 minutos.",
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 11,
+                name: "Aula express de 'como dividir o controle da TV'",
+                category: "sobrevivencia",
+                price: "R$ 60,00",
+                description: "O verdadeiro teste de compatibilidade do casal.",
+                image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 12,
+                name: "Pizza da reconciliação",
+                category: "sobrevivencia",
+                price: "R$ 80,00",
+                description: "Para o primeiro 'você dorme no sofá' da vida a dois.",
+                image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 13,
+                name: "Kit de 'GPS do amor'",
+                category: "sobrevivencia",
+                price: "R$ 50,00",
+                description: "Inclui: paciência, humor e um mapa para evitar brigas no carro.",
+                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 14,
+                name: "Fundo 'Decidindo onde jantar'",
+                category: "sobrevivencia",
+                price: "R$ 90,00",
+                description: "Porque essa escolha será o novo 'quem pede desculpa primeiro?'.",
+                image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 15,
+                name: "Seguro anti-malas extraviadas",
+                category: "sobrevivencia",
+                price: "R$ 60,00",
+                description: "Para garantir que a lua de mel não comece com stress.",
+                image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 16,
+                name: "Caixa 'kit sobrevivência da viagem'",
+                category: "sobrevivencia",
+                price: "R$ 85,00",
+                description: "Inclui: remédio pra enjoo, tapa-olhos e um aviso de 'não me acorde antes das 10h'.",
+                image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 17,
+                name: "A Primeira Compra do Casal",
+                category: "sobrevivencia",
+                price: "R$ 100,00",
+                description: "Arroz, sabão em pó e a sensação de que agora é vida de adulto mesmo.",
+                image: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 18,
+                name: "Passagem simbólica para o paraíso",
+                category: "lua-de-mel",
+                price: "R$ 130,00",
+                description: "Ida garantida. Volta... a gente negocia.",
+                image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 19,
+                name: "Um jantar romântico à luz de velas",
+                category: "lua-de-mel",
+                price: "R$ 100,00",
+                description: "O que importa é o clima — e a comida, claro.",
+                image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 20,
+                name: "Sorvetes infinitos debaixo do sol",
+                category: "lua-de-mel",
+                price: "R$ 50,00",
+                description: "Patrocinando o doce da lua de mel (literalmente).",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 21,
+                name: "Passeio de aventura (leve)",
+                category: "lua-de-mel",
+                price: "R$ 110,00",
+                description: "Algo entre 'romântico' e 'vamos ver se ele segura minha mão direito'.",
+                image: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            },
+            {
+                id: 22,
+                name: "Fundo 'foto de casal perfeita'",
+                category: "lua-de-mel",
+                price: "R$ 65,00",
+                description: "Para pagar o fotógrafo que vai dizer: 'agora olha pro outro e ri'.",
+                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                reserved: false
+            }
+        ];
+
+        // URLs de deep linking para bancos selecionados (PIX)
+        const bankPixUrls = {
+            'nubank': 'https://nubank.com.br/pagar/',
+            'picpay': 'https://app.picpay.com/user/leandroebianca',
+            'santander': 'https://www.santander.com.br/pix',
+            'itau': 'https://www.itau.com.br/pix/',
+            'bradesco': 'https://banco.bradesco/html/classic/produtos-servicos/pay/pix.shtm',
+            'caixa': 'https://www.caixa.gov.br/Paginas/pix.aspx'
+        };
+
+        // Cores e ícones dos bancos selecionados
+        const bankStyles = {
+            'nubank': { 
+                color: '#8A05BE', 
+                bgColor: '#8A05BE', 
+                name: 'Nubank',
+                icon: 'NU'
+            },
+            'picpay': { 
+                color: '#11C76F', 
+                bgColor: '#11C76F', 
+                name: 'PicPay',
+                icon: 'PP'
+            },
+            'santander': { 
+                color: '#EC0000', 
+                bgColor: '#EC0000', 
+                name: 'Santander',
+                icon: 'ST'
+            },
+            'itau': { 
+                color: '#FF7200', 
+                bgColor: '#FF7200', 
+                name: 'Itaú',
+                icon: 'IT'
+            },
+            'bradesco': { 
+                color: '#CC092F', 
+                bgColor: '#CC092F', 
+                name: 'Bradesco',
+                icon: 'BR'
+            },
+            'caixa': { 
+                color: '#0070B0', 
+                bgColor: '#0070B0', 
+                name: 'Caixa',
+                icon: 'CX'
+            }
+        };
+
+        // Elementos DOM
+        const giftsContainer = document.getElementById('giftsContainer');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const giftModal = document.getElementById('giftModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalGiftName = document.getElementById('modalGiftName');
+        const modalGiftContent = document.getElementById('modalGiftContent');
+        const galleryModal = document.getElementById('galleryModal');
+        const closeGalleryModal = document.getElementById('closeGalleryModal');
+        const galleryModalImage = document.getElementById('galleryModalImage');
+        const submitButton = document.getElementById('submitButton');
+        const loadingIcon = document.getElementById('loadingIcon');
+
+        // Inicializar loading como oculto
+        loadingIcon.style.display = 'none';
+
+        // Função para criar ícone do banco
+        function createBankIcon(bankCode) {
+            const bankStyle = bankStyles[bankCode];
+            const icon = document.createElement('div');
+            icon.className = 'bank-icon';
+            icon.style.backgroundColor = bankStyle.bgColor;
+            icon.style.color = '#fff';
+            icon.textContent = bankStyle.icon;
+            return icon;
+        }
+
+        // Função para renderizar presentes
+        function renderGifts(category = 'all') {
+            giftsContainer.innerHTML = '';
+            
+            const filteredGifts = category === 'all' 
+                ? gifts 
+                : gifts.filter(gift => gift.category === category);
+            
+            filteredGifts.forEach(gift => {
+                const giftElement = document.createElement('div');
+                giftElement.className = `gift-item ${gift.reserved ? 'gift-reserved' : ''}`;
+                giftElement.innerHTML = `
+                    <div class="gift-image">
+                        <img src="${gift.image}" alt="${gift.name}">
+                    </div>
+                    <div class="gift-info">
+                        <h3 class="gift-name">${gift.name}</h3>
+                        <p class="gift-price">${gift.price}</p>
+                        <p class="gift-description">${gift.description}</p>
+                        <div class="gift-actions">
+                            <button class="btn btn-primary" onclick="openGiftModal(${gift.id})">
+                                ${gift.reserved ? 'Indisponível' : 'Presentear com PIX'}
+                            </button>
+                            <button class="btn btn-secondary" onclick="showGiftDetails(${gift.id})">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                `;
+                giftsContainer.appendChild(giftElement);
+            });
+        }
+
+        // Função para abrir modal de presente com opções de PIX
+        function openGiftModal(giftId) {
+            const gift = gifts.find(g => g.id === giftId);
+            
+            if (gift.reserved) {
+                alert('Este presente já foi presentado por outro convidado. Por favor, escolha outra opção.');
+                return;
+            }
+            
+            modalGiftName.textContent = gift.name;
+            
+            // Criar botões dos bancos selecionados
+            let bankButtonsHTML = '';
+            Object.keys(bankStyles).forEach(bankCode => {
+                const bank = bankStyles[bankCode];
+                bankButtonsHTML += `
+                    <button class="bank-btn" onclick="openBankPix('${bankCode}', ${giftId})">
+                        ${createBankIcon(bankCode).outerHTML}
+                        ${bank.name}
+                    </button>
+                `;
+            });
+            
+            modalGiftContent.innerHTML = `
+                <div style="display: flex; margin-bottom: 20px;">
+                    <img src="${gift.image}" alt="${gift.name}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 20px;">
+                    <div>
+                        <p><strong>Preço:</strong> ${gift.price}</p>
+                        <p><strong>Categoria:</strong> ${getCategoryName(gift.category)}</p>
+                    </div>
+                </div>
+                <p>${gift.description}</p>
+                
+                <div class="pix-instructions">
+                    <h4 style="margin-bottom: 10px;">🎁 Como Presentear com PIX</h4>
+                    <p>Escolha seu banco abaixo para abrir o app e fazer o PIX no valor de <strong>${gift.price}</strong></p>
+                </div>
+                
+                <div class="bank-options">
+                    ${bankButtonsHTML}
+                </div>
+                
+                <div class="pix-code">
+                    <p><strong>Chave PIX:</strong> (19) 98940-9943</p>
+                    <p><strong>Nome:</strong> Leandro & Bianca</p>
+                    <p><strong>Valor:</strong> ${gift.price}</p>
+                    <p><strong>Descrição:</strong> Presente ${gift.name}</p>
+                </div>
+                
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    Após o pagamento, nos avise pelo WhatsApp! 📱
+                </p>
+            `;
+            
+            giftModal.style.display = 'flex';
+        }
+
+        // Função para abrir o banco selecionado para PIX
+        function openBankPix(bank, giftId) {
+            const gift = gifts.find(g => g.id === giftId);
+            const bankUrl = bankPixUrls[bank];
+            
+            if (bankUrl) {
+                // Abre a página do banco em nova aba
+                window.open(bankUrl, '_blank');
+                
+                // Mostra mensagem de instrução
+                setTimeout(() => {
+                    alert(`💰 Abrindo ${bankStyles[bank].name}...\n\nNo app do banco:\n1. Vá para a opção PIX\n2. Use a chave: (19) 98940-9943\n3. Valor: ${gift.price}\n4. Descrição: Presente ${gift.name}\n\nObrigado pelo presente! 🎉`);
+                }, 500);
+            } else {
+                alert('Banco não encontrado. Por favor, abra manualmente o app do seu banco e use a chave PIX: (19) 98940-9943');
+            }
+        }
+
+        // Função para mostrar detalhes do presente
+        function showGiftDetails(giftId) {
+            const gift = gifts.find(g => g.id === giftId);
+            modalGiftName.textContent = gift.name;
+            modalGiftContent.innerHTML = `
+                <div style="display: flex; margin-bottom: 20px;">
+                    <img src="${gift.image}" alt="${gift.name}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 5px; margin-right: 20px;">
+                    <div>
+                        <p><strong>Preço:</strong> ${gift.price}</p>
+                        <p><strong>Categoria:</strong> ${getCategoryName(gift.category)}</p>
+                        <p><strong>Status:</strong> ${gift.reserved ? 'Já presentado' : 'Disponível'}</p>
+                    </div>
+                </div>
+                <p>${gift.description}</p>
+                <button class="btn btn-primary" onclick="openGiftModal(${giftId})" style="width: 100%; margin-top: 20px;">
+                    ${gift.reserved ? 'Indisponível' : 'Presentear com PIX'}
+                </button>
+            `;
+            
+            giftModal.style.display = 'flex';
+        }
+
+        // Função auxiliar para obter nome da categoria
+        function getCategoryName(category) {
+            const categories = {
+                'festa': 'Para a Festa',
+                'sobrevivencia': 'Sobrevivência Pós-Casamento',
+                'lua-de-mel': 'Lua de Mel'
+            };
+            return categories[category] || category;
+        }
+
+        // Event Listeners para categorias
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                renderGifts(button.dataset.category);
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            giftModal.style.display = 'none';
+        });
+
+        closeGalleryModal.addEventListener('click', () => {
+            galleryModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === giftModal) {
+                giftModal.style.display = 'none';
+            }
+            if (e.target === galleryModal) {
+                galleryModal.style.display = 'none';
+            }
+        });
+
+        // Galeria com lightbox
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                galleryModalImage.src = imgSrc;
+                galleryModal.style.display = 'flex';
+            });
+        });
+
+        // Contagem regressiva para a data do casamento
+        function updateCountdown() {
+            const weddingDate = new Date('March 14, 2026 16:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "<h2>O grande dia chegou!</h2>";
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Formulário de confirmação via WhatsApp
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Mostrar loading
+            loadingIcon.style.display = 'inline-block';
+            submitButton.disabled = true;
+            
+            // Coletar dados do formulário
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const guests = document.getElementById('guests').value;
+            const attendance = document.getElementById('attendance').value;
+            const message = document.getElementById('message').value;
+            
+            // Formatar mensagem para WhatsApp
+            const attendanceText = attendance === 'yes' ? 'Sim, estarei presente' : 'Não poderei comparecer';
+            const guestText = guests === '0' ? 'Vou sozinho(a)' : `Vou com ${guests} acompanhante(s)`;
+            
+            let whatsappMessage = `Confirmação de Presença - Casamento Leandro & Bianca%0A%0A`;
+            whatsappMessage += `Nome: ${name}%0A`;
+            whatsappMessage += `Telefone: ${phone}%0A`;
+            whatsappMessage += `Presença: ${attendanceText}%0A`;
+            whatsappMessage += `Acompanhantes: ${guestText}%0A`;
+            
+            if (message) {
+                whatsappMessage += `Mensagem: ${message}%0A`;
+            }
+            
+            // Número de telefone dos noivos
+            const phoneNumber = '5519989409943';
+            
+            // Simular processamento
+            setTimeout(() => {
+                // Abrir WhatsApp com a mensagem pré-preenchida
+                window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+                
+                // Limpar formulário
+                this.reset();
+                
+                // Esconder loading
+                loadingIcon.style.display = 'none';
+                submitButton.disabled = false;
+                
+                // Mostrar mensagem de confirmação
+                alert('Obrigado por confirmar sua presença! Agora você será redirecionado para o WhatsApp para finalizar o envio.');
+            }, 1500);
+        });
+        
+        // Animação de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+            
+            // Inicializar a lista de presentes
+            renderGifts();
+        });
+    </script>
+</body>
+</html>
